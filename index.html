@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>RSS JOY</title>
+	<style>
+		:root {
+			color-scheme: light dark;
+			font-family: system-ui, sans-serif;
+		}
+		*, *::before, *::after {
+			box-sizing: border-box;
+		}
+		header {
+			display: flex;
+			flex-wrap: wrap;
+			padding: 0.5rem 1rem;
+			gap: 1rem;
+			justify-content: space-between;
+			align-items: center;
+		}
+		main {
+			display: flex;
+			flex-wrap: wrap;
+			padding: 0.5rem;
+			gap: 1rem;
+		}
+		article > div { display: none }
+		article {
+			flex: 1;
+			padding: 0.25rem 1rem 0.75rem;
+			border-radius: 1rem;
+			background-color: hsla(0, 0%, 50%, 0.25);
+			min-width: 30ch;
+			/* max-width: 40ch; */
+		}
+		h1, h2 {
+			margin-block: 0;
+		}
+		h3, h4 {
+			font-weight: 500;
+		}
+		p, h3, h4 {
+			margin-block: 0.5em 0.25em;
+		}
+	</style>
+</head>
+<body>
+	<header><h1>RSS JOY</h1><h2>An RSS-some starting page.</h2></header>
+	<main>
+		<article>
+			<script src="//rss.bloople.net/?url=https%3A%2F%2Fsarajoy.dev%2Frss.xml&detail=20&limit=6&showtitle=false&type=js"></script>
+		</article>
+		<article>
+			<script src="//rss.bloople.net/?url=https%3A%2F%2Flocalghost.dev%2Ffeed.xml&detail=20&limit=6&showtitle=false&type=js"></script>
+		</article>
+		<article>
+			<script src="//rss.bloople.net/?url=https%3A%2F%2Fwww.htmhell.dev%2Ffeed.xml&detail=20&limit=8&showtitle=false&type=js"></script>
+		</article>
+		<article>
+			<script src="//rss.bloople.net/?url=https%3A%2F%2Fwww.htmhell.dev%2Ffeed_tips.xml&detail=20&limit=10&showtitle=false&type=js"></script>
+		</article>
+		<article>
+			<script src="//rss.bloople.net/?url=https%3A%2F%2Frknight.me%2Fsubscribe%2Fposts%2Frss.xml&detail=20&limit=3&showtitle=false&type=js"></script>
+		</article>
+		<article>
+			<script src="//rss.bloople.net/?url=https%3A%2F%2Fmxb.dev%2Ffeed.xml&detail=20&limit=10&showtitle=false&type=js"></script>
+		</article>
+		<article>
+			<script src="//rss.bloople.net/?url=https%3A%2F%2Fmatthiasott.com%2Ffeed&detail=20&limit=3&showtitle=false&type=js"></script>
+		</article>
+		<article>
+			<script src="//rss.bloople.net/?url=https%3A%2F%2Fbuttondown.email%2Fownyourweb%2Frss&detail=15&limit=3&showtitle=false&type=js"></script>
+		</article>
+		
+	</main>
+</body>
+</html>
