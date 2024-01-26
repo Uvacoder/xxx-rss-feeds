@@ -24,7 +24,7 @@ async function rss2html(url, max) {
       link:
         item.querySelector("link")?.textContent ||
         item.querySelector("link")?.getAttribute("href"),
-      description: item.querySelector("description")?.textContent.length > 150 ? strip(item.querySelector("description").textContent).substring(0,150)+"..." : item.querySelector("description")?.textContent,
+      description: item.querySelector("description")?.textContent.length > 100 ? strip(item.querySelector("description").textContent).substring(0,100)+"..." : item.querySelector("description")?.textContent,
     }));
   console.info({ title, link, items, maxItems });
   return /*html*/ `<article>
