@@ -79,12 +79,13 @@
 						)}
 				</article>`;
 		}
+		const sarajoyEntry = rss2html("/rsslurp/sarajoy.dev/rss.xml");
+		document.querySelector("main").append(sarajoyEntry);
 	</script>
 </head>
 <body>
 	<header><h1>RS.<span>S</span>JOY.lol</h1><h2>An RSS-some starting page.</h2></header>
 	<main>
-		<script>rss2html("/rsslurp/sarajoy.dev/rss.xml")</script>
 		<article>
 			<script src="//rss.bloople.net/?url=https%3A%2F%2Fsarajoy.dev%2Frss.xml&detail=20&limit=5&showtitle=false&type=js" async></script>
 		</article>
