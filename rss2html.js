@@ -18,7 +18,7 @@ async function rss2html(url, max) {
       link:
         item.querySelector("link")?.textContent ||
         item.querySelector("link")?.getAttribute("href"),
-      description: item.querySelector("description")?.textContent,
+      description: item.querySelector("description")?.textContent.substring(0,200)+"...",
     }));
   console.info({ title, link, items, maxItems });
   return /*html*/ `<article>
