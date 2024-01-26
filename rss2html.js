@@ -38,7 +38,7 @@ async function rss2html(url, max) {
             }</a></h4>
                     ${
                       item.description
-                        ? `<p class="feed-item-desc">${item.description}</p>`
+                        ? `<div class="feed-item-desc">${item.description}</div>`
                         : ""
                     }
             <!-- To create this output, copy and host this script wherever you want. Have fun! -->`
