@@ -1,8 +1,14 @@
+const parser = new DOMParser();
+
+function strip(html){
+  let doc = parser.parseFromString(html, 'text/html');
+  return doc.body.textContent || "";
+}
+
 async function rss2html(url, max) {
   const proxiedUrl = `/rsslurp/${url}`;
   const rssResponse = await fetch(proxiedUrl);
   const rssText = await rssResponse.text();
-  const parser = new DOMParser();
   const doc = parser.parseFromString(rssText, "application/xml");
   window.rssDocs ??= {};
   Object.assign(window.rssDocs, { [url]: doc });
@@ -18,7 +24,7 @@ async function rss2html(url, max) {
       link:
         item.querySelector("link")?.textContent ||
         item.querySelector("link")?.getAttribute("href"),
-      description: item.querySelector("description") && item.querySelector("description").textContent.length > 150 ? item.querySelector("description").textContent.replace(/(<([^>]+)>)/gi, "").substring(0,150)+"..." : item.querySelector("description")?.textContent,
+      description: item.querySelector("description").textContent.length > 150 ? strip(item.querySelector("description").textContent).substring(0,150)+"..." : item.querySelector("description")?.textContent,
     }));
   console.info({ title, link, items, maxItems });
   return /*html*/ `<article>
