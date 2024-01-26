@@ -48,7 +48,7 @@
 			margin-block: 0.5em 0.25em;
 		}
 	</style>
-	<script>
+	<script defer>
 		async function rss2html(url) {
 			const rssResponse = await fetch(url);
 			const rssText = await rssResponse.text();
