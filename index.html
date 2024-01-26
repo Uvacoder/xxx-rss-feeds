@@ -1,17 +1,22 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 	<title>RSS JOY</title>
 	<style>
 		:root {
 			color-scheme: light dark;
 			font-family: system-ui, sans-serif;
 		}
-		*, *::before, *::after {
+
+		*,
+		*::before,
+		*::after {
 			box-sizing: border-box;
 		}
+
 		header {
 			display: flex;
 			flex-wrap: wrap;
@@ -20,17 +25,23 @@
 			justify-content: space-between;
 			align-items: center;
 		}
+
 		h1 span::after {
 			content: " ";
 		}
+
 		main {
 			display: flex;
 			flex-wrap: wrap;
 			padding: 0.5rem;
 			gap: 1rem;
 		}
-		article > div { display: none }
-		article {
+
+		rss-list>div {
+			display: none
+		}
+
+		rss-list {
 			flex: 1;
 			padding: 0.25rem 1rem 0.75rem;
 			border-radius: 1rem;
@@ -38,47 +49,41 @@
 			min-width: 30ch;
 			/* max-width: 40ch; */
 		}
-		h1, h2 {
+
+		h1,
+		h2 {
 			margin-block: 0;
 		}
-		h3, h4 {
+
+		h3,
+		h4 {
 			font-weight: 500;
 		}
-		p, h3, h4 {
+
+		p,
+		h3,
+		h4 {
 			margin-block: 0.5em 0.25em;
 		}
 	</style>
-	<script defer>
-	</script>
+	<script type="module" src="rss2html.js"></script>
 </head>
+
 <body>
-	<header><h1>RS.<span>S</span>JOY.lol</h1><h2>An RSS-some starting page.</h2></header>
+	<header>
+		<h1>RS.<span>S</span>JOY.lol</h1>
+		<h2>An RSS-some starting page.</h2>
+	</header>
 	<main>
-		<article>
-			<script src="//rss.bloople.net/?url=https%3A%2F%2Fsarajoy.dev%2Frss.xml&detail=20&limit=5&showtitle=false&type=js" async></script>
-		</article>
-		<article>
-			<script src="//rss.bloople.net/?url=https%3A%2F%2Flocalghost.dev%2Ffeed.xml&detail=20&limit=6&showtitle=false&type=js" async></script>
-		</article>
-		<article>
-			<script src="//rss.bloople.net/?url=https%3A%2F%2Fwww.htmhell.dev%2Ffeed.xml&detail=20&limit=6&showtitle=false&type=js" async></script>
-		</article>
-		<article>
-			<script src="//rss.bloople.net/?url=https%3A%2F%2Fchriskirknielsen.com%2Frss.xml&detail=20&limit=6&showtitle=false&type=js" async></script>
-		</article>
-		<article>
-			<script src="//rss.bloople.net/?url=https%3A%2F%2Frknight.me%2Fsubscribe%2Fposts%2Frss.xml&detail=20&limit=3&showtitle=false&type=js" async></script>
-		</article>
-		<article>
-			<script src="//rss.bloople.net/?url=https%3A%2F%2Fmxb.dev%2Ffeed.xml&detail=20&limit=10&showtitle=false&type=js" async></script>
-		</article>
-		<article>
-			<script src="//rss.bloople.net/?url=https%3A%2F%2Fmatthiasott.com%2Ffeed&detail=20&limit=3&showtitle=false&type=js" async></script>
-		</article>
-		<article>
-			<script src="//rss.bloople.net/?url=https%3A%2F%2Fbuttondown.email%2Fownyourweb%2Frss&detail=15&limit=2&showtitle=false&type=js" async></script>
-		</article>
-		
+		<rss-list src="https://sarajoy.dev/rss.xml" max="5"></rss-list>
+		<rss-list src="https://localghost.dev/feed.xml" max="5"></rss-list>
+		<rss-list src="https://www.htmhell.dev/feed.xml" max="5"></rss-list>
+		<rss-list src="https://chriskirknielsen.com/rss.xml" max="5"></rss-list>
+		<rss-list src="https://rknight.me/subscribe/posts/rss.xml" max="5"></rss-list>
+		<rss-list src="https://mxb.dev/feed.xml" max="5"></rss-list>
+		<rss-list src="https://matthiasott.com/feed" max="5"></rss-list>
+		<rss-list src="https://buttondown.email/ownyourweb/rss" max="5"></rss-list>
 	</main>
 </body>
+
 </html>
