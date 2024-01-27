@@ -41,13 +41,11 @@ main {
   gap: 1rem;
 }
 
-rss-list {
-  flex: 1;
+article {
   padding: 0.25rem 1rem 0.75rem;
   border-radius: 1rem;
-  background-color: hsla(0, 0%, 50%, 0.25);
-  min-width: 35ch;
-  /* max-width: 40ch; */
+  box-shadow: 0.5rem 0.5rem 2rem -1rem hsla(0, 0%, 0%, 0.1);
+  height: 100%;
 }
 
 h2,
@@ -60,6 +58,7 @@ h3,
 h4 {
   margin-block: 0.5em 0.25em;
 }
+
 footer {
   text-align: center;
 }
