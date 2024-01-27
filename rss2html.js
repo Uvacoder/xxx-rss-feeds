@@ -7,7 +7,8 @@ function strip(html){
 }
 
 async function rss2html(url, max) {
-  if (location === "sarajoy.dev") {
+  console.log(location)
+  if (location !== "127.0.0.1") {
     url = `/rsslurp/${url.replace(/^https?\:\/\//i, "")}`;
   }
   const rssResponse = await fetch(url);
