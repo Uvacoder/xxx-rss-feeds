@@ -1,4 +1,5 @@
 const parser = new DOMParser();
+const location = window.location.hostname;
 
 function strip(html){
   let doc = parser.parseFromString(html, 'text/html');
@@ -6,8 +7,10 @@ function strip(html){
 }
 
 async function rss2html(url, max) {
-  const proxiedUrl = `/rsslurp/${url}`;
-  const rssResponse = await fetch(proxiedUrl);
+  if (location === "sarajoy.dev") {
+    url = `/rsslurp/${url.replace(/^https?\:\/\//i, "")}`;
+  }
+  const rssResponse = await fetch(url);
   const rssText = await rssResponse.text();
   const doc = parser.parseFromString(rssText, "application/xml");
   window.rssDocs ??= {};
@@ -26,22 +29,22 @@ async function rss2html(url, max) {
         item.querySelector("link")?.getAttribute("href"),
       description: item.querySelector("description")?.textContent.length > 100 ? strip(item.querySelector("description").textContent).substring(0,100)+"..." : item.querySelector("description")?.textContent,
     }));
-  console.info({ title, link, items, maxItems });
+  // console.info({ title, link, items, maxItems });
   return /*html*/ `<article>
-        <h3 class="feed-title">
+        <h2 class="feed-title">
             ${
               link
                 ? /*html*/ `<a href="${link}" target="_blank">${title}</a>`
                 : title
             }
-        </h3>
+        </h2>
         ${items
           .map(
             (item) => /*html*/ `
-                <h4 class="feed-item-title">
+                <h3 class="feed-item-title">
                     <a href="${item.link}" target="_blank">${
               item.title
-            }</a></h4>
+            }</a></h3>
                     ${
                       item.description
                         ? `<div class="feed-item-desc">${item.description}</div>`

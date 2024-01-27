@@ -1,0 +1,65 @@
+:root {
+  color-scheme: light dark;
+  font-family: system-ui, sans-serif;
+  --lh: 1.4rem;
+  line-height: var(--lh);
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+header {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 0.5rem 0.75rem;
+  gap: 1rem;
+  justify-content: space-between;
+  align-items: center;
+}
+
+header h1 {
+  font-size: 2.5rem;
+  margin-block: 0;
+}
+
+header h1 span::after {
+  content: " ";
+}
+
+header p {
+  font-size: 1.5rem;
+  font-weight: 300;
+}
+
+main {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 0.5rem;
+  gap: 1rem;
+}
+
+rss-list {
+  flex: 1;
+  padding: 0.25rem 1rem 0.75rem;
+  border-radius: 1rem;
+  background-color: hsla(0, 0%, 50%, 0.25);
+  min-width: 35ch;
+  /* max-width: 40ch; */
+}
+
+h2,
+h3 {
+  font-weight: 500;
+}
+
+p,
+h3,
+h4 {
+  margin-block: 0.5em 0.25em;
+}
+footer {
+  text-align: center;
+}

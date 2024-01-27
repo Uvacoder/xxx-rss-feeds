@@ -2,89 +2,29 @@
 <html lang="en">
 
 <head>
-	<meta charset="UTF-8" />
-	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>RSS JOY</title>
-	<style>
-		:root {
-			color-scheme: light dark;
-			font-family: system-ui, sans-serif;
-			--lh: 1.4rem;
-			line-height: var(--lh);
-		}
-
-		*,
-		*::before,
-		*::after {
-			box-sizing: border-box;
-		}
-
-		header {
-			display: flex;
-			flex-wrap: wrap;
-			padding: 0.5rem 1rem;
-			gap: 1rem;
-			justify-content: space-between;
-			align-items: center;
-		}
-
-		h1 span::after {
-			content: " ";
-		}
-
-		main {
-			display: flex;
-			flex-wrap: wrap;
-			padding: 0.5rem;
-			gap: 1rem;
-		}
-
-		rss-list {
-			flex: 1;
-			padding: 0.25rem 1rem 0.75rem;
-			border-radius: 1rem;
-			background-color: hsla(0, 0%, 50%, 0.25);
-			min-width: 35ch;
-			/* max-width: 40ch; */
-		}
-
-		h1,
-		h2 {
-			margin-block: 0;
-		}
-
-		h3,
-		h4 {
-			font-weight: 500;
-		}
-
-		p,
-		h3,
-		h4 {
-			margin-block: 0.5em 0.25em;
-		}
-		footer {
-			text-align: center;
-		}
-	</style>
+	<link rel="stylesheet" href="styles.css">
 	<script type="module" src="rss2html.js"></script>
 </head>
 
 <body>
 	<header>
 		<h1>RS.<span>S</span>JOY.lol</h1>
-		<h2>An RSS-some starting page.</h2>
+		<p>An RSS-some starting page.</p>
 	</header>
 	<main>
-		<rss-list src="sarajoy.dev/rss.xml" max="4"></rss-list>
-		<rss-list src="localghost.dev/feed.xml" max="5"></rss-list>
-		<rss-list src="www.htmhell.dev/feed.xml" max="5"></rss-list>
-		<rss-list src="chriskirknielsen.com/rss.xml" max="5"></rss-list>
-		<rss-list src="rknight.me/subscribe/posts/rss.xml" max="3"></rss-list>
-		<rss-list src="mxb.dev/feed.xml" max="5"></rss-list>
-		<rss-list src="matthiasott.com/feed" max="3"></rss-list>
-		<rss-list src="buttondown.email/ownyourweb/rss" max="3"></rss-list>
-		<rss-list src="noahliebman.net/feed/index.xml" max="3"></rss-list>
+		<rss-list src="https://sarajoy.dev/rss.xml" max="4"></rss-list>
+		<rss-list src="https://localghost.dev/feed.xml" max="5"></rss-list>
+		<rss-list src="https://www.htmhell.dev/feed.xml" max="5"></rss-list>
+		<rss-list src="https://chriskirknielsen.com/rss.xml" max="5"></rss-list>
+		<rss-list src="https://rknight.me/subscribe/posts/rss.xml" max="3"></rss-list>
+		<rss-list src="https://mxb.dev/feed.xml" max="5"></rss-list>
+		<rss-list src="https://matthiasott.com/feed" max="3"></rss-list>
+		<rss-list src="https://buttondown.email/ownyourweb/rss" max="3"></rss-list>
+		<rss-list src="https://noahliebman.net/feed/index.xml" max="3"></rss-list>
+		<rss-list src="https://chriscoyier.net/feed/" max="3"></rss-list>
 	</main>
 	<footer>
 		<p>
