@@ -1,1 +1,1 @@
-/rewrite/*  https://:splat 200
+/rewrite/*  :splat 200
