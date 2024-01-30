@@ -31,7 +31,7 @@ async function rss2html(url, max) {
 			? strip(item.querySelector("description").textContent).substring(0,100)+"..."
 			: item.querySelector("description")?.textContent,
 		}));
-	return/*html*/ `<article style="width: calc(20rem + ${Math.random()} * 10rem); background-color: hsla(${Math.random() * 360}, 25%, 50%, 0.1)">
+	return/*html*/ `<article style="--hue: ${Math.random() * 360}">
 		<h2 class="feed-title">
 			${
 				link
@@ -62,7 +62,7 @@ class RssList extends HTMLElement {
 
 	update() {
 		if (!this.getAttribute("src") || this.pending) return;
-		this.innerHTML = `<article style="width: 25rem; background-color: hsla(0, 0%, 50%, 0.1); display: grid; place-content: center"><p>Loading ${this.getAttribute("src")}</p></article>`;
+		this.innerHTML = `<article style="background-color: hsla(0, 0%, 50%, 0.1); display: grid; place-content: center"><p>Loading ${this.getAttribute("src")}</p></article>`;
 		this.pending = true;
 		rss2html(this.getAttribute("src"), this.getAttribute("max")).then(
 			(html) => {
